@@ -1,20 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testtwo/pro2/cubit/cubit_couter.dart';
+import 'package:testtwo/pro2/widget/home_page.dart';
 
-// import 'package:testtwo/pavlova_recipe.dart';
-// import 'package:testtwo/pavlova_recipe_loop_function.dart';
+
+
+
+
+
+// void main() {
+//   runApp(   ProductCard());
+// }
+
+// void main() {
+//   runApp(
+//     BlocProvider(
+//       create: (context) => CounterCubit(),
+//       child: MaterialApp(
+//         home: MyHomePage(),
+//       ),
+//     ),
+//   );
+// }
+// class ShoppingCartApp extends StatelessWidget {
+//   const ShoppingCartApp({super.key});
 //
-// import 'package:testtwo/favorite_widget.dart';
-
-
-import 'package:testtwo/pro1/login_page.dart';
-import 'package:testtwo/test/pavlova_recipe.dart';
-
-
-
-import 'pro1/item_screen.dart';
-
-
+//   @override
+//   Widget build(BuildContext context) {
+//     return ChangeNotifierProvider(
+//       create: (context) => CartProvider(),
+//       child: const MaterialApp(
+//           debugShowCheckedModeBanner: false, home: MyHomePage()),
+//     );
+//   }
+// }
 void main() {
-  runApp(  const LoginPage());
+  runApp(MaterialApp(
+    home: BlocProvider(
+      create: (context) => CartCubit(), // CounterCubit sẽ được sử dụng ở cấp cao nhất của ứng dụng
+      child: MyHomePages(),
+    ),
+  )
+    ,
+  );
 }
 
